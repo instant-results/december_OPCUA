@@ -8,7 +8,7 @@ server = Server()
 url = "opc.tcp://127.0.0.1:9001"
 server.set_endpoint(url)
 
-name = "OPCUA_SERVER"
+name = "OPCUA_SERVER" #URI
 addspace = server.register_namespace(name)
 
 # Get the Objects node
@@ -23,6 +23,8 @@ myvar.set_writable()
 
 # Start the server
 server.start()
+
+server_uri = server.get_application_uri()
 
 # Run the server forever
 try:
